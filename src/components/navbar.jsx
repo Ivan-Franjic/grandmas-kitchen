@@ -6,14 +6,7 @@ function Navbar() {
   return (
     <div className="header">
       <Link to="/">
-        <img
-          className="logo"
-          src={logo}
-          style={{
-            width: 500,
-            height: 200,
-          }}
-        />
+        <img className="logo" src={logo} />
       </Link>
     </div>
   );

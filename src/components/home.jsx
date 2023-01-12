@@ -18,7 +18,7 @@ const Home = (props) => {
   return (
     <>
       <div class="flex justify-center">
-        <a href="#!">
+        <a href="#!" class="avatar">
           <img
             src={maindishes}
             class="rounded-full w-32 mb-4 mx-auto"
@@ -27,7 +27,7 @@ const Home = (props) => {
         </a>
         <h5 class="text-xl font-medium leading-tight mb-2">Main dishes</h5>
 
-        <a href="#!">
+        <a href="#!" class="avatar">
           <img
             src={appetizers}
             class="rounded-full w-32 mb-4 mx-auto"
@@ -36,7 +36,7 @@ const Home = (props) => {
         </a>
         <h5 class="text-xl font-medium leading-tight mb-2">Appetizers</h5>
 
-        <a href="#!">
+        <a href="#!" class="avatar">
           <img
             src={soups}
             class="rounded-full w-32 mb-4 mx-auto"
@@ -45,7 +45,7 @@ const Home = (props) => {
         </a>
         <h5 class="text-xl font-medium leading-tight mb-2">Soups</h5>
 
-        <a href="#!">
+        <a href="#!" class="avatar">
           <img
             src={desserts}
             class="rounded-full w-32 mb-4 mx-auto"
@@ -54,7 +54,7 @@ const Home = (props) => {
         </a>
         <h5 class="text-xl font-medium leading-tight mb-2">Desserts</h5>
 
-        <a href="#!">
+        <a href="#!" class="avatar">
           <img
             src={drinks}
             class="rounded-full w-32 mb-4 mx-auto"
