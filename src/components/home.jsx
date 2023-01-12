@@ -17,55 +17,79 @@ const Home = (props) => {
 
   return (
     <>
-      <div class="flex justify-center">
-        <a href="#!" class="avatar">
+      <div class="flex justify-center space-x-5 mb-20">
+        <a href="/main_dishes" class="avatar">
           <img
             src={maindishes}
             class="rounded-full w-32 mb-4 mx-auto"
             alt="Avatar"
           />
+          <h5 class="text-xl font-medium leading-tight mb-2">Main dishes</h5>
         </a>
-        <h5 class="text-xl font-medium leading-tight mb-2">Main dishes</h5>
 
-        <a href="#!" class="avatar">
+        <a href="/appetizers" class="avatar">
           <img
             src={appetizers}
             class="rounded-full w-32 mb-4 mx-auto"
             alt="Avatar"
           />
+          <h5 class="text-xl font-medium leading-tight mb-2">Appetizers</h5>
         </a>
-        <h5 class="text-xl font-medium leading-tight mb-2">Appetizers</h5>
 
-        <a href="#!" class="avatar">
+        <a href="/soupes" class="avatar">
           <img
             src={soups}
             class="rounded-full w-32 mb-4 mx-auto"
             alt="Avatar"
           />
+          <h5 class="text-xl font-medium leading-tight mb-2">Soups</h5>
         </a>
-        <h5 class="text-xl font-medium leading-tight mb-2">Soups</h5>
 
-        <a href="#!" class="avatar">
+        <a href="/desserts" class="avatar">
           <img
             src={desserts}
             class="rounded-full w-32 mb-4 mx-auto"
             alt="Avatar"
           />
+          <h5 class="text-xl font-medium leading-tight mb-2">Desserts</h5>
         </a>
-        <h5 class="text-xl font-medium leading-tight mb-2">Desserts</h5>
 
-        <a href="#!" class="avatar">
+        <a href="/drinks" class="avatar">
           <img
             src={drinks}
             class="rounded-full w-32 mb-4 mx-auto"
             alt="Avatar"
           />
+          <h5 class="text-xl font-medium leading-tight mb-2">Drinks</h5>
         </a>
-        <h5 class="text-xl font-medium leading-tight mb-2">Drinks</h5>
       </div>
 
-      <div class="flex justify-center">
-        <div class="rounded-lg shadow-lg bg-white max-w-sm">
+      <div class="flex justify-center space-x-10">
+        <div class="rounded-lg shadow-lg bg-white max-w-xs">
+          <a href="#!">
+            <img
+              class="rounded-t-lg"
+              src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+              alt=""
+            />
+          </a>
+          <div class="p-6">
+            <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
+          </div>
+        </div>
+        <div class="rounded-lg shadow-lg bg-white max-w-xs">
+          <a href="#!">
+            <img
+              class="rounded-t-lg"
+              src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+              alt=""
+            />
+          </a>
+          <div class="p-6">
+            <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
+          </div>
+        </div>
+        <div class="rounded-lg shadow-lg bg-white max-w-xs">
           <a href="#!">
             <img
               class="rounded-t-lg"

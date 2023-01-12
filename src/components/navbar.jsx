@@ -4,9 +4,9 @@ import logo from "../grandmas.jpg";
 
 function Navbar() {
   return (
-    <div className="header">
+    <div class="flex justify-center mb-10 border-b-2 border-yellow-900">
       <Link to="/">
-        <img className="logo" src={logo} />
+        <img class="logo" src={logo} />
       </Link>
     </div>
   );
