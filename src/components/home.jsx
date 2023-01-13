@@ -4,17 +4,23 @@ import appetizers from "../appetizers.jpg";
 import soups from "../soups.jpg";
 import desserts from "../desserts.jpg";
 import drinks from "../drinks.jpg";
+import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
+import { db } from "../firebase";
 
 const Home = (props) => {
-  const myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  const requestOptions = {
-    method: "GET",
-    heders: myHeaders,
-  };
+  const [favourites, setFavourites] = useState([]);
 
-  useEffect(() => {}, []);
-
+  useEffect(() => {
+    const q = query(collection(db, "favourites"));
+    onSnapshot(q, (querySnapshot) => {
+      setFavourites(
+        querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      );
+    });
+  }, []);
   return (
     <>
       <div class="flex justify-center space-x-5 mb-20">
@@ -64,43 +70,23 @@ const Home = (props) => {
         </a>
       </div>
 
-      <div class="flex justify-center space-x-10">
-        <div class="rounded-lg shadow-lg bg-white max-w-xs">
-          <a href="#!">
-            <img
-              class="rounded-t-lg"
-              src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-              alt=""
-            />
-          </a>
-          <div class="p-6">
-            <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
+      <div class="flex flex-wrap justify-center space-x-10">
+        {favourites.map((favourite) => (
+          <div class="rounded-lg shadow-lg bg-white max-w-xs  mb-10">
+            <a href="#!">
+              <img
+                class="rounded-t-lg"
+                src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+                alt=""
+              />
+            </a>
+            <div class="p-6">
+              <h5 class="text-gray-900 text-xl font-medium">
+                {favourite.data.name}
+              </h5>
+            </div>
           </div>
-        </div>
-        <div class="rounded-lg shadow-lg bg-white max-w-xs">
-          <a href="#!">
-            <img
-              class="rounded-t-lg"
-              src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-              alt=""
-            />
-          </a>
-          <div class="p-6">
-            <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-          </div>
-        </div>
-        <div class="rounded-lg shadow-lg bg-white max-w-xs">
-          <a href="#!">
-            <img
-              class="rounded-t-lg"
-              src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-              alt=""
-            />
-          </a>
-          <div class="p-6">
-            <h5 class="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-          </div>
-        </div>
+        ))}
       </div>
     </>
   );
