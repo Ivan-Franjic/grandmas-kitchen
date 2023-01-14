@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
 import Main_dishes from "./components/main_dishes";
 import Appetizers from "./components/appetizers";
 import Soupes from "./components/soupes";
 import Desserts from "./components/desserts";
 import Drinks from "./components/drinks";
+import Details from "./components/details";
 import Navbar from "./components/navbar";
 import "./App.css";
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/soupes" element={<Soupes />} />
           <Route path="/desserts" element={<Desserts />} />
           <Route path="/drinks" element={<Drinks />} />
+          <Route path="/details/:dishId" element={<Details />} />
         </Routes>
       </BrowserRouter>
     </div>

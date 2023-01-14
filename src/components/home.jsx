@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import maindishes from "../main-dishes.jpg";
 import appetizers from "../appetizers.jpg";
 import soups from "../soups.jpg";
 import desserts from "../desserts.jpg";
 import drinks from "../drinks.jpg";
-import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
+import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { db } from "../firebase";
 
-const Home = (props) => {
+const Home = () => {
   const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
-    const q = query(collection(db, "favourites"));
+    const q = query(collection(db, "meals"), where("favourite", "==", true));
     onSnapshot(q, (querySnapshot) => {
       setFavourites(
         querySnapshot.docs.map((doc) => ({
@@ -72,14 +73,15 @@ const Home = (props) => {
 
       <div class="flex flex-wrap justify-center space-x-10">
         {favourites.map((favourite) => (
-          <div class="rounded-lg shadow-lg bg-white max-w-xs  mb-10">
-            <a href="#!">
-              <img
-                class="rounded-t-lg"
-                src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-                alt=""
-              />
-            </a>
+          <div
+            key={favourite.id}
+            class="rounded-lg shadow-lg bg-white max-w-xs  mb-10"
+          >
+            <h1>
+              <Link to={`/details/${favourite.id}`}>
+                <img class="rounded-t-lg" src={favourite.data.image} alt="" />
+              </Link>
+            </h1>
             <div class="p-6">
               <h5 class="text-gray-900 text-xl font-medium">
                 {favourite.data.name}
